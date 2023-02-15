@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+}
+body{
+    min-height: 100vh;
+    color: var(--dark-grayish-violet);
+    font-size: 1.125rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+h1,h2,p,span{
+    font-weight: 500;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container .card-container{
+    position: relative;
+    height: 240px;
+}
+.card-container img{
+    width: 100%;
+    height: 100%;
+}
+.card-container .card{
+    width: 285px;
+    height: 160px;
+    position: absolute;
+    border-radius: .3rem;
+    text-transform: uppercase;
+    z-index: 100;
+}
+.card-container .card-back{
+    top: 2rem;
+    right: 1rem;
+    background: url(./images/bg-card-back.png) no-repeat;
+    background-size: 100% 100%;
+}
+.card-back .cvc-output{
+    position: absolute;
+    top: 4.5rem;
+    right: 2.5rem;
+    color: var(--white);
+    font-size: .625rem;
+}
+.card-container .card-front{
+    top: 7.6rem;
+    left: 1rem;
+    background: url(./images/bg-card-front.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-front .logo{
+    width: 50px;
+    height: auto;
+}
+.card-front .output-section{
+    color: var(--white);
+}
+.output-section h1{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.output-section div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .625rem;
+}
+.container .input-section{
+    padding:1.5rem;
+    padding-top: 5rem;
+    position: relative;
+}
+.input-section form{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+form .input-field label{
+    color: var(--very-dark-violet);
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+.input-field input{
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1rem;
+    outline: none;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: .5rem;
+    display: block;
+    margin: .5rem 0 .3rem 0;
+}
+::placeholder{
+    color: var(--light-grayish-violet);
+    font-size: 1.125rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.input-field.error-empty input,.input-field.error-invalid input{
+    border: 1px solid var(--red);
+}
+.input-field input:focus{
+    border: 1px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(to left, hsl(278, 94%, 30%) , hsl(249, 99%, 64%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+.input-field .error{
+    color: var(--red);
+    font-size: .7rem;
+    letter-spacing: normal;
+    display: none;
+}
+.input-field.error-empty .empty{
+    display: block;
+}
+.input-field.error-invalid .invalid{
+    display: block;
+}
+form .flex-row{
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+.flex-row > *{
+    width: 100%;
+}
+.date-container .date-input{
+    display: flex;
+    gap: .5rem;
+}
+.btn{
+    width: 100%;
+    height: 3rem;
+    color: var(--white);
+    background: var(--very-dark-violet);
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    border: none;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--dark-grayish-violet);
+}
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+.modal img{
+    margin-bottom: 2rem;
+}
+.modal h2{
+    color: var(--very-dark-violet);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.modal p{
+    margin: 1rem 0 2rem 0;
+}
+footer{
+    color: var(--very-dark-violet);
+    font-size: .8rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+footer a{
+    color: var(--very-dark-violet);
+}
+footer a:hover{
+    text-decoration: none;
+}
+
+@media(min-width: 1020px){
+    .container{
+        height: 100vh;
+        flex-direction: row;
+    }
+    .container .card-container{
+        width: 33.33%;
+        height: 100%;
+    }
+    .card-container .card{
+        transform: scale(1.1);
+    }
+    .card-container .card-back{
+        top: 21rem;
+        left: 8rem;
+    }
+    .card-container .card-front{
+        top: 8rem;
+        left: 4rem;
+    }
+    .container .input-section{
+        width: 66.67%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .input-section form{
+        max-width: 425px;
+    }
+    .modal>*{
+        max-width: 425px;
+    }
+}
+
+@media(min-width: 1280px){
+    .card-container .card{
+        transform: scale(1.3);
+    }
+    .card-container .card-back{
+        top: 25rem;
+        left: 18rem;
+    }
+    .card-container .card-front{
+        top: 10rem;
+        left: 13rem;
+    }
+}

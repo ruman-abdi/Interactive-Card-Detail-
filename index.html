@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <main class="container">
+    <div class="card-container">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="./images/bg-main-desktop.png">
+        <img src="./images/bg-main-mobile.png" alt="">
+      </picture>
+      <div class="card card-back">
+        <span class="cvc-output">000</span>
+      </div>
+      <div class="card card-front">
+        <img src="./images/card-logo.svg" alt="logo" class="logo">
+        <section class="output-section">
+          <h1 class="number-output">0000 0000 0000 0000</h1>
+          <div>
+            <p class="name-output">Jane Appleseed</p>
+            <p><span class="month-output">00</span>/<span class="year-output">00</span></p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="input-section">
+      <form>
+        <div class="input-field">
+          <label for="name">Cardholder Name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name" maxlength="25" class="name-input">
+          <p class="error empty">Can't be blank</p>
+          <p class="error invalid">Wrong format, letters only</p>
+        </div>
+        <div class="input-field">
+          <label for="number">Card Number</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="number" name="number" minlength="16" maxlength="16" class="number-input">
+          <p class="error empty">Can't be blank</p>
+          <p class="error invalid">Wrong format, numbers only</p>
+        </div>
+        <div class="flex-row">
+          <div class="input-field date-container">
+            <label id='date'>Exp. Date (MM/YY)</label>
+            <div class="date-input">
+              <input type='text' placeholder="MM" id='month' name="month" aria-labelledby='date' class="date month-input" maxlength="2"/>
+              <input type='text' placeholder="YY" id='year' name="year" aria-labelledby='date' class="date year-input" maxlength="2"/>
+            </div>
+            <p class="error empty">Can't be blank</p>
+            <p class="error invalid">Wrong format, numbers only</p>
+          </div>
+          <div class="input-field">
+            <label for="cvc">CVC</label>
+            <input type="text" placeholder="e.g. 123" id="cvc" name="cvc" maxlength="4" class="cvc-input">
+            <p class="error empty">Can't be blank</p>
+            <p class="error invalid">Wrong format, numbers only</p>
+          </div>
+        </div>
+        <button type="submit" class="btn">Confirm</button>
+      </form>
+      <section class="modal">
+        <img src="./images/icon-complete.svg" alt="">
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button type="button" class="btn close">Continue</button>
+      </section>
+      <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+        Coded by <a href=" https://github.com/ruman-abdi" target="_blank" rel="noopener">Ruman</a>.
+      </footer>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
